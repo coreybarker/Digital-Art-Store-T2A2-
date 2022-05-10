@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :artwork
+  resources :artworks
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'artwork#index'
+  root 'artworks#index'
 end
