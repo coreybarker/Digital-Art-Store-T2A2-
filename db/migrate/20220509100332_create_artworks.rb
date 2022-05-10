@@ -3,7 +3,7 @@ class CreateArtworks < ActiveRecord::Migration[7.0]
     create_table :artworks do |t|
       t.string :title
       t.string :artist
-      t.string :description
+      t.text :description
       t.integer :dimensions
       t.integer :price
 
