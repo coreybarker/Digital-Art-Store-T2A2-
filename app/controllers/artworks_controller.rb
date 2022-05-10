@@ -7,6 +7,9 @@ class ArtworksController < ApplicationController
 
     def show; end
 
+    def create
+    end
+
   private
 
     def find_artwork
