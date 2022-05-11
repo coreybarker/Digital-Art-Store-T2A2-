@@ -1,37 +1,39 @@
-<%= form_with(model: @artwork) do |f| %>
+<center>
+    <%= form_with(model: @artwork) do |f| %>
 
-    
-    <% if @artwork.artwork_image.attached? %>
+        
+        <% if @artwork.artwork_image.attached? %>
+            <fieldset>
+                <%= cl_image_tag @artwork.artwork_image.key, aspect_ratio: "1:1", background: "#bce8e6", border: "5px_solid_rgb:bce8e6", gravity: "auto", height: 233, radius: "max", width: 200, crop: "fill", cloud_name: 'cozybaker' %>
+            </fieldset>
+        <% end %>
+
+        <fieldset class="mb-2">
+            <%= f.label :artwork_image %>
+            <%= f.file_field :artwork_image %>
+        </fieldset>
+
+        <fieldset class="mb-2">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </fieldset>
+        <fieldset class="mb-2">
+            <%= f.label :artist %>
+            <%= f.text_field :artist %>
+        </fieldset>
+
+        <fieldset class="mb-2">
+            <%= f.label "$" %>
+            <%= f.number_field :price, in: 1.0..10000.0, step: 0.5 %>
+        </fieldset>
+
         <fieldset>
-            <%= cl_image_tag @artwork.artwork_image.key, aspect_ratio: "1:1", background: "#bce8e6", border: "5px_solid_rgb:bce8e6", gravity: "auto", height: 233, radius: "max", width: 200, crop: "fill", cloud_name: 'cozybaker' %>
+            <%= f.label :description %><br>
+            <%= f.text_area :description, size: "70x5" %>
+        </fieldset>
+
+        <fieldset class="mb-2">
+            <%= f.submit class: 'btn btn-success' %>
         </fieldset>
     <% end %>
-
-    <fieldset class="mb-2">
-        <%= f.label :artwork_image %>
-        <%= f.file_field :artwork_image %>
-    </fieldset>
-
-    <fieldset class="mb-2">
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </fieldset>
-    <fieldset class="mb-2">
-        <%= f.label :artist %>
-        <%= f.text_field :artist %>
-    </fieldset>
-
-    <fieldset class="mb-2">
-        <%= f.label "$" %>
-        <%= f.number_field :price, in: 1.0..10000.0, step: 0.5 %>
-    </fieldset>
-
-    <fieldset>
-        <%= f.label :description %><br>
-        <%= f.text_area :description, size: "70x5" %>
-    </fieldset>
-
-    <fieldset class="mb-2">
-        <%= f.submit class: 'btn btn-success' %>
-    </fieldset>
-<% end %>
+</center>

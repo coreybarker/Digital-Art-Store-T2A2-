@@ -8,7 +8,7 @@
     </div>
     <h2 style="color:#0a6955;"> $<%= @artwork.price %> </h2>
 </center>
-    <div class="btn-toolbar">
-        <%= link_to('Edit', edit_artwork_path(@artwork), class: 'btn btn-warning me-2') %>
+    <div class="btn-toolbar m-5">
+        <%= link_to('Edit', edit_artwork_path(@artwork), class: 'btn btn-warning me-4') %>
         <%= button_to('Delete', @artwork, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to delete '#{@artwork}'?" } }) %>
     </div>
