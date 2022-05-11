@@ -1,8 +1,10 @@
 <h1 
   style="color:#0a6955;">All Artwork
 </h1>
-<%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary") %>
+
+<%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary mb-2") %>
 
 <% @artworks.each do |artwork| %>
   <p> <%= link_to artwork.title, artwork %> A$<%= artwork.price %> </p>
 <% end %>
+

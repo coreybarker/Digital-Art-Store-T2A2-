@@ -1,7 +1,11 @@
 <%= form_with(model: @artwork) do |f| %>
 
     
-    
+    <% if @artwork.artwork_image.attached? %>
+        <fieldset>
+            <%= cl_image_tag @artwork.artwork_image.key, aspect_ratio: "1:1", background: "#bce8e6", border: "5px_solid_rgb:bce8e6", gravity: "auto", height: 233, radius: "max", width: 200, crop: "fill", cloud_name: 'cozybaker' %>
+        </fieldset>
+    <% end %>
 
     <fieldset class="mb-2">
         <%= f.label :artwork_image %>
