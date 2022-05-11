@@ -18,6 +18,16 @@ class ArtworksController < ApplicationController
 
     def edit; end
 
+    def update
+        @artwork.update(artwork_params)
+        redirect_to @artwork
+    end
+
+    def destroy
+        @artwork.destroy
+        redirect_to artworks_path
+    end
+
   private
 
     def find_artwork

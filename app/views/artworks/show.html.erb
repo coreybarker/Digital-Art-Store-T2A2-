@@ -2,4 +2,5 @@
 
 <div>
   <%= link_to('Edit', edit_artwork_path(@artwork), class: 'btn btn-warning me-2') %>
+  <%= button_to('Delete', @artwork, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to delete '#{@artwork}'?" } }) %>
 </div>
