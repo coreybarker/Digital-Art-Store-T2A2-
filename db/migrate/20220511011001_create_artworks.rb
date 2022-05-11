@@ -4,7 +4,6 @@ class CreateArtworks < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :artist
       t.text :description
-      t.integer :dimensions
       t.integer :price
 
       t.timestamps

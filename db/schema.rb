@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_09_100332) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_11_011001) do
   create_table "artworks", force: :cascade do |t|
     t.string "title"
     t.string "artist"
-    t.integer "dimensions"
+    t.text "description"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

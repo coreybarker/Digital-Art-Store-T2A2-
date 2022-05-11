@@ -3,11 +3,11 @@
 one:
   title: MyString
   artist: MyString
-  dimensions: 1
-  price: 1.5
+  description: MyText
+  price: 1
 
 two:
   title: MyString
   artist: MyString
-  dimensions: 1
-  price: 1.5
+  description: MyText
+  price: 1
