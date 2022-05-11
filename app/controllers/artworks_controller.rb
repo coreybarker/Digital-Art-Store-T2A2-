@@ -16,6 +16,8 @@ class ArtworksController < ApplicationController
         redirect_to artwork
     end
 
+    def edit; end
+
   private
 
     def find_artwork

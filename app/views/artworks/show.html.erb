@@ -1,3 +1,5 @@
 <h1 style="color:#0a6955;"> <%= @artwork.title %> </h1>
 
-
+<div>
+  <%= link_to('Edit', edit_artwork_path(@artwork), class: 'btn btn-warning me-2') %>
+</div>
