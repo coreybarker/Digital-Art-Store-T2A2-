@@ -31,7 +31,15 @@
     </style>
   </head>
 
-  <body class= "p-3">
+  <body>
+  <main class= "p-3">
+    <% if notice%>
+        <p class="alert alert-info notice" role="alert"><%= notice %></p>
+      <% end %>
+      <%if alert %>
+        <p class="alert alert-danger" role="alert"><%= alert %></p>
+      <% end %>
     <%= yield %>
+  </main>
   </body>
 </html>

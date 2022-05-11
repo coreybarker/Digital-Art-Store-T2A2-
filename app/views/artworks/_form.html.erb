@@ -1,4 +1,13 @@
 <%= form_with(model: @artwork) do |f| %>
+
+    
+    
+
+    <fieldset class="mb-2">
+        <%= f.label :artwork_image %>
+        <%= f.file_field :artwork_image %>
+    </fieldset>
+
     <fieldset class="mb-2">
         <%= f.label :title %>
         <%= f.text_field :title %>
