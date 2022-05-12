@@ -1,11 +1,21 @@
+
 <center>
-  <h1 
-    style="color:#0a6955;">All Artwork
-  </h1>
-  <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary mb-2") %>
+  <h1 style="color:#0a6955;">All Artwork</h1>
 </center>
-<div>
-  <% @artworks.each do |artwork| %>
-    <p> <%= link_to artwork.title, artwork %> A$<%= artwork.price %> </p>
-  <% end %>
-</div>
+
+<center>
+  <div class="card-deck" style="display: flex;">
+    <% @artworks.each do |artwork| %>
+      <div class="card" style="width: 30rem; color:#0a6955; background:#bce8e6;">
+        <%# <%= cl_image_tag(@artwork.artwork_image.key, crop: :scale, width: 500, cloud_name: 'cozybaker') if @artwork.artwork_image.attached? %> 
+        <div class="card-body">
+          <h5 class="card-title"><%=artwork.title%></h5>
+          <h5 class="card-title"><%=artwork.price%></h5>
+          <span>
+            <%= link_to('View', artwork, class: 'btn btn-outline-dark stretched-link') %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</center>
