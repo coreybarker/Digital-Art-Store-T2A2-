@@ -18,7 +18,9 @@
             <a class="nav-link active" aria-current="page" href="/artworks">Home</a>
             <a class="nav-link" href="#">Artists</a>
             <a class="nav-link disabled"></a>
-            <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary") %>
+            <% if user_signed_in? %>
+              <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary") %>
+            <% end %>
           </div>
           <% if user_signed_in? %>
             <div class="btn btn-toolbar p-3"> 
