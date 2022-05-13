@@ -1,7 +1,12 @@
+    <div>
+        <%= link_to('Back', :back, class: 'btn btn-outline-dark') %>
+    </div>
 <center>
     <div>
         <h1 style="color:#0a6955;"> <%= @artwork.title %> </h1> <h3 style="color:#0a6955;">By <%= @artwork.artist %> </h3>
+        <%= @artwork.description %>
     </div>
+
 
     <div>
         <%= cl_image_tag(@artwork.artwork_image.key, crop: :scale, width: 500, cloud_name: 'cozybaker') if @artwork.artwork_image.attached? %>
