@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+    before_action :authenticate_user!, except: %i[index]
     before_action :find_artwork, only: %i[show edit update destroy]
 
     def index
