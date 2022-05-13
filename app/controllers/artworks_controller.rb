@@ -1,5 +1,6 @@
 class ArtworksController < ApplicationController
     before_action :authenticate_user!, except: %i[index]
+    before_action :check_auth
     before_action :find_artwork, only: %i[show edit update destroy]
 
     def index
@@ -30,6 +31,10 @@ class ArtworksController < ApplicationController
     end
 
   private
+
+    def check_auth
+        authorize Artwork
+    end
 
     def find_artwork
         @artwork = Artwork.find(params[:id])
