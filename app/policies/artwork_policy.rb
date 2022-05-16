@@ -40,6 +40,14 @@ class ArtworkPolicy
     return @user && (edit? || destroy?)
   end
 
+  def artists?
+    return @user && @user.has_any_role?(:admin, :artist, :customer)
+  end
+
+  def cart?
+    return @user && @user.has_any_role?(:admin, :artist, :customer)
+  end
+
   class Scope
     def initialize(user, scope)
       @user = user

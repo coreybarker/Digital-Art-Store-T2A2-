@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="/artworks">Home</a>
-            <a class="nav-link" href="#">Artists</a>
+            <a class="nav-link" href="/artists">Artists</a>
             <a class="nav-link disabled"></a>
             <% if user_signed_in? %>
               <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-outline-success") if policy(Artwork).new? %>

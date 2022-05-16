@@ -30,6 +30,13 @@ class ArtworksController < ApplicationController
         redirect_to artworks_path
     end
 
+    def artists
+        @artworks = Artwork.order(:artist)
+    end
+
+    def cart
+    end
+
   private
 
     def check_auth
