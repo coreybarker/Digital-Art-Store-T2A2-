@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/artworks">DA Store</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,22 +19,22 @@
             <a class="nav-link" href="#">Artists</a>
             <a class="nav-link disabled"></a>
             <% if user_signed_in? %>
-              <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-primary") if policy(Artwork).new? %>
+              <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-outline-success") if policy(Artwork).new? %>
             <% end %>
           </div>
           <% if user_signed_in? %>
-            <div class="btn btn-toolbar p-3"> 
+            <div class="btn btn-toolbar p-3">
               Signed in as, <%= current_user.email %>
             </div>
             <div class="btn btn-toolbar">
-              <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-primary', method: :delete, form: { data: { turbo_confirm: "Are you sure you want to log out?" } } %>
+              <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-outline-primary', method: :delete, form: { data: { turbo_confirm: "Are you sure you want to log out?" } } %>
             </div>
           <% else %>
-            <div class="btn btn-toolbar"> 
-                <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-secondary' %>
+            <div class="btn btn-toolbar">
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-secondary' %>
             </div>
             <div class="btn btn-toolbar">
-              <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+              <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary' %>
             </div>
           <% end %>
         </div>
@@ -42,7 +42,7 @@
     </nav>
     <style>
       body {
-        background: #bce8e6;
+        background: #f4f1e0;
       }
     </style>
   </head>
