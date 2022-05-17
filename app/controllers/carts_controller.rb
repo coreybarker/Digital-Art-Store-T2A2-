@@ -54,7 +54,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "Cart was successfully emptied." }
+      format.html { redirect_to root_path, notice: "Cart is now empty." }
       format.json { head :no_content }
     end
   end
