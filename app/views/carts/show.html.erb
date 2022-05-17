@@ -1,13 +1,13 @@
-
-
-<div class="keep-shopping pv1 mt4 has-text-right">
-  <%= link_to 'Keep Shopping', artworks_path, class: 'btn btn-outline-dark' %>
+<div class="continue-shopping pv1 mt4 has-text-right">
+  <%= link_to 'Continue Shopping', artworks_path, class: 'btn btn-outline-dark' %>
 </div>
+<h1 class="text-center" style="color:#4c301e;">Cart</h1>
+
 <section class="section">
   <%= render(@cart.line_items) %>
-
-  <div class="columns">
-    <div class="column">
+<hr/>
+  <div class="columns" >
+    <div class="column" style="display: flex; justify-content: flex-end;">
       <%= button_to('Empty Cart', @cart, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to empty cart?" } }) %>
 
     </div>

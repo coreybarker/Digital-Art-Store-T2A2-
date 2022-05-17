@@ -1,5 +1,5 @@
 <hr/>
-<div class="columns align0items-center">
+<div class="columns align-items-center">
     <div class="column is-1">
         <%= line_item.quantity %>
     </div>
@@ -15,13 +15,13 @@
             <div class="content column is-9">
                 <%= truncate(line_item.artwork.description, length: 140) %>
             </div>
-            <div class="column is-3 has-text-right">
+            <div class="column is-3">
                 <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong>
             </div>
         </div>
     </div>
 </div>
 
-<div class="has-text-right">
-    <%= button_to('Remove Item', line_item, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to remove item?" } }) %>
+<div class="has-text-right" style="display: flex; justify-content: flex-end;">
+    <%= button_to('Remove Item', line_item, class: 'btn btn-outline-dark', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to remove item?" } }) %>
 </div>

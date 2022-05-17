@@ -23,6 +23,18 @@
             <% end %>
           </div>
         </div>
+
+          <% if cart_has_items %>
+            <%= link_to cart_path(@cart), class:"navbarr-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+              </span>
+            <% end %>
+          <% end %>
+
           <% if user_signed_in? %>
             <div class="btn btn=toolbar p-3">
               Signed in as, <%= current_user.email %>
