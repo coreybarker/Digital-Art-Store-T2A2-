@@ -1,0 +1,20 @@
+
+
+<div class="keep-shopping pv1 mt4 has-text-right">
+  <%= link_to 'Keep Shopping', artworks_path, class: 'btn btn-outline-dark' %>
+</div>
+<section class="section">
+  <%= render(@cart.line_items) %>
+
+  <div class="columns">
+    <div class="column">
+      <%= button_to('Empty Cart', @cart, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to empty cart?" } }) %>
+
+    </div>
+    <div class="column total has-text-right">
+      <h4 class="title is-4">
+        <spanc class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
+      </h4>
+    </div>
+  </div>
+</section>

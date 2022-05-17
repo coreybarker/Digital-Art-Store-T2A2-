@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
     include Pundit
+    include CurrentCart
+    before_action :set_cart
 
     rescue_from Pundit::NotAuthorizedError, with: :forbidden
 

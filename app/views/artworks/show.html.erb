@@ -1,6 +1,7 @@
 <div>
   <%= link_to('Back', root_path, class: 'btn btn-outline-dark') %>
 </div>
+
 <div>
   <h1 class="text-center" style="color:#4c301e;"> <%= @artwork.title %> </h1>
   <h4 class="text-center" style="color:#4c301e;">By <%= @artwork.artist %> </h4>
@@ -12,7 +13,7 @@
       <div class="card-body">
         <h5 class="card-title text-center">Description</h5>
         <p class="card-title text-center" style="padding: 5rem"><%=@artwork.description%></p>
-        <%= link_to('Add to Cart', @artwork, class: 'btn btn-outline-success') %>
+        <%= button_to('Add to Cart', line_items_path(artwork_id: @artwork), class: 'btn btn-outline-success') %>
       </div>
     </div>
   </div>
