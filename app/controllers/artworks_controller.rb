@@ -34,8 +34,6 @@ class ArtworksController < ApplicationController
         @artworks = Artwork.order(:artist)
     end
 
-    # def cart; end
-
   private
 
     def check_auth

@@ -19,11 +19,11 @@
             <a class="nav-link" href="/artists">Artists</a>
             <a class="nav-link disabled"></a>
             <% if user_signed_in? %>
-              <%= link_to('Add Artwork', new_artwork_path, class: "btn btn-outline-success") if policy(Artwork).new? %>
+              <%= link_to('Sell Artwork', new_artwork_path, class: "btn btn-outline-success") if policy(Artwork).new? %>
             <% end %>
           </div>
         </div>
-
+        
           <% if cart_has_items %>
             <%= link_to cart_path(@cart), class:"navbarr-item button is-warning" do %>
               <span class="icon is-small">
