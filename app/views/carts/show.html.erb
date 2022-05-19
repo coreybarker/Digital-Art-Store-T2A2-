@@ -3,6 +3,8 @@
 </div>
 <h1 class="text-center" style="color:#4c301e;">Shopping Cart</h1>
 
+<%# Below calls to the cart and line_items entities, via the cart and line_item models, to display what has been added to the cart  %>
+<%# via the line_items entity. %>
 <section class="section">
   <%= render(@cart.line_items) %>
 <hr/>
@@ -10,6 +12,8 @@
     <div class="column" style="display: flex; justify-content: flex-start;">
       <%= button_to('Empty Cart', @cart, class: 'btn btn-danger', method: :delete, form: { data: {turbo_confirm: "Are you sure you want to empty cart?" } }) %>
 
+<%# Below, calls to the cart model to get the total_price method, which calls the total_price method %>
+<%# from the line_item model, adding up the price of each artwork put into the cart. %>
     </div>
     <div class="column total has-text-right">
       <h4 class="title is-4" style="display: flex; justify-content: flex-end;">

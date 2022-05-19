@@ -1,4 +1,7 @@
 <h1 class="text-center" style="color:#4c301e;">All Artwork</h1>
+
+<%# Below calls to the artwork entity, via the artwork model, iterating over the values to  %>
+<%# display the image, title and price of all the artwork in the database. %>
 <center>
   <div class="card-deck" style="display: flex; flex-wrap: wrap; justify-content: center;">
     <% @artworks.each do |artwork| %>

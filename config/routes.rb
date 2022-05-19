@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :artworks
   get 'artists', to: 'artworks#artists'
+  get 'order_by_price', to: 'artworks#order_by_price'
   # Defines the root path route ("/")
   # root "articles#index"
   root 'artworks#index'

@@ -5,7 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
 Artwork.destroy_all
+
+user = User.create(email: 'customer@test.com', password: '111111')
+user.add_role :customer
+
+artist = User.create(email: 'artist@test.com', password: '111111')
+artist.add_role :artist
+
+admin = User.create(email: 'admin@test.com', password: '123456')
+admin.add_role :admin
 
 Artwork.create(title: 'Pixel Painting', artist: 'Leonardo da Vinci', price: '600', description: 'A legendary da Vinci pixel painting')
 Artwork.create(title: 'Sunshine', artist: 'Efe Kurnaz', price: '150', description: 'A worldly sunset image')

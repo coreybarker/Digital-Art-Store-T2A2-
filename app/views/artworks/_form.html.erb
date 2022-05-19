@@ -1,3 +1,5 @@
+<%# Below, calls to the artwork entity through the artwork model, to allow input from the %>
+<%# end-user, to update the data in the artwork database, through the use of forms %>
 <center>
   <%= form_with(model: @artwork) do |f| %>
     <% if @artwork.artwork_image.attached? %>
