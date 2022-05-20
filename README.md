@@ -7,7 +7,7 @@ https://fathomless-retreat-58210.herokuapp.com/
 ---
 
 #### Link to Github repo:
-
+https://github.com/coreybarker/Digital-Art-Store-T2A2-
 
 ---
 #### Description:
