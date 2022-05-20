@@ -23,33 +23,38 @@
             <% end %>
           </div>
         </div>
-        
-          <% if cart_has_items %>
-            <%= link_to cart_path(@cart), class:"navbarr-item button is-warning" do %>
-              <span class="icon is-small">
-                <i class="fa fa-shopping-cart"></i>
-              </span>
-              <span>Cart
-                <%= cart_count_over_one %>
-              </span>
-            <% end %>
+        <% if cart_has_items %>
+          <%= link_to cart_path(@cart), class:"navbarr-item button is-warning" do %>
+            <span class="icon is-small">
+              <i class="fa fa-shopping-cart"></i>
+            </span>
+            <span>Cart
+              <%= cart_count_over_one %>
+            </span>
           <% end %>
-
-          <% if user_signed_in? %>
-            <div class="btn btn=toolbar p-3">
-              Signed in as, <%= current_user.email %>
-            </div>
-            <div class="btn btn=toolbar p-3">
-              <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-outline-primary', method: :delete, form: { data: { turbo_confirm: "Are you sure you want to log out?" } } %>
-            </div>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="btn btn=toolbar p-3">
+            Signed in as, <%= current_user.email %>
+          </div>
+          <% if current_user.has_any_role?(:artist, :admin) %>
+            <%= "" %>
           <% else %>
-            <div class="btn btn=toolbar">
-              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-secondary' %>
-            </div>
             <div class="btn btn=toolbar p-3">
-              <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary' %>
+              <%= button_to 'Become an Artist', artist_role_path, class: 'btn btn-outline-success', method: :post if policy(Artwork).artist_roles? %>
             </div>
           <% end %>
+          <div class="btn btn=toolbar p-3">
+            <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-outline-primary', method: :delete, form: { data: { turbo_confirm: "Are you sure you want to log out?" } } %>
+          </div>
+        <% else %>
+          <div class="btn btn=toolbar">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-secondary' %>
+          </div>
+          <div class="btn btn=toolbar p-3">
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary' %>
+          </div>
+        <% end %>
       </div>
     </nav>
     <style>
