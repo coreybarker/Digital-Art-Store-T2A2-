@@ -25,7 +25,7 @@ class ArtworkPolicy
   end
 
   def update?
-    return @user && @user.has_any_role?(:admin, :artist)
+    return @user && @user.has_role?(:admin)
   end
 
   def edit?
@@ -33,7 +33,7 @@ class ArtworkPolicy
   end
 
   def destroy?
-    create?
+    return @user && @user.has_role?(:admin)
   end
 
   def edit_or_destroy?
